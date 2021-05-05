@@ -19,6 +19,8 @@ for (let i = 1; i <= rows; i++) {
   }
 }
 
+//add bombs
+
 function changeTileState(e) {
   e.target.setAttribute('state', 'open');
 }
