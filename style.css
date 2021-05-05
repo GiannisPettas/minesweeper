@@ -18,9 +18,15 @@ body {
   box-shadow: rgb(255 255 255 / 64%) 3px 3px 0px 0px inset;
   cursor: pointer;
 }
+
 .grid div[state='closed'] {
   background-color: grey;
 }
+
 .grid div[state='open'] {
   background-color: rgb(255, 255, 255);
+}
+
+.grid div[bomb='true'] {
+  background-color: rgb(153, 31, 31);
 }
