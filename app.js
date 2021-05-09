@@ -17,7 +17,7 @@ for (let i = 1; i <= rows; i++) {
 
     tileDiv.setAttribute('position', tileID);
     tileDiv.setAttribute('state', 'closed');
-    tileDiv.addEventListener('click', changeTileState);
+    tileDiv.addEventListener('click', tileClicked);
 
     tilesObj[tileID] = tileDiv;
     grid.appendChild(tileDiv);
@@ -48,9 +48,21 @@ for (let i = numOfBombs; i > 0; ) {
   }
 }
 
-function changeTileState(e) {
+function tileClicked(e) {
   const clickedTile = e.target;
   clickedTile.setAttribute('state', 'open');
+  if (clickedTile.bomb) {
+    console.log('you lost!');
+    return;
+  }
+  if (clickedTile.bombDetectNum === 0) {
+    const tilesAroundTileArray = findAllTilesAroundTile(clickedTile);
+    for (let i = 0; i < tilesAroundTileArray.length; i++) {
+      if (tilesAroundTileArray[i].bombDetectNum === 0) {
+        tilesAroundTileArray[i].setAttribute('state', 'open');
+      }
+    }
+  }
 }
 
 function joinTwoNumbersWithPadding(num1, num2, padding = 2) {

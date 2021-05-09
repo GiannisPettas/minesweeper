@@ -30,7 +30,7 @@ body {
 }
 
 .grid div[state='open'] {
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(161, 198, 228);
 }
 
 .grid div[bomb='true'] {
