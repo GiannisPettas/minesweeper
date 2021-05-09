@@ -13,6 +13,12 @@ body {
 .grid div {
   height: 40px;
   width: 40px;
+  color: white;
+  font-weight: bolder;
+  font-size: 1.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border: 1px solid rgb(0, 0, 0);
   box-sizing: border-box;
   box-shadow: rgb(255 255 255 / 64%) 3px 3px 0px 0px inset;
